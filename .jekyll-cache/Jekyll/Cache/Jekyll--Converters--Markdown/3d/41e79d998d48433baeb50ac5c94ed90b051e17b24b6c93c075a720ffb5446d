@@ -1,0 +1,85 @@
+I"�	<p>注:本人linux系统为fedora 部分命令可能和centos不同</p>
+
+<h3 id="关机相关操作">关机相关操作</h3>
+<blockquote>
+  <ul>
+    <li>关机 sudo systemctl prowoff</li>
+    <li>重启 sudo systemctl restart now 立即重启</li>
+  </ul>
+</blockquote>
+
+<h3 id="tar命令">tar命令</h3>
+<blockquote>
+  <ul>
+    <li>压缩文件 tar zcvf 文件名.tar.gz / [原始文件名]</li>
+    <li>解压文件 tar zxvf 文件名.tar.gz
+      <h2 id="参数">参数:</h2>
+    </li>
+    <li>z 代表文件后缀为.gz</li>
+    <li>c 代表我要压缩文件</li>
+    <li>x 代表我要解压文件</li>
+    <li>v 代表过程可视化</li>
+    <li>f 目标文件</li>
+  </ul>
+</blockquote>
+
+<h3 id="scp命令">scp命令</h3>
+<blockquote>
+  <ul>
+    <li>scp上传  scp -P [要上传的文件名] [用户名]@[ip]:[要存放文件的远程路径]</li>
+  </ul>
+</blockquote>
+
+<h3 id="nginx安装">nginx安装</h3>
+<blockquote>
+  <ul>
+    <li>如果不是在root账户下请用sudo命令执行</li>
+    <li>dnf安装</li>
+    <li>sudo dnf install nginx
+      <h2 id="非root账户需要sudo">非root账户需要sudo</h2>
+    </li>
+    <li>启动nginx服务</li>
+    <li>sudo systemctl start nginx.service</li>
+    <li>停止nginx服务</li>
+    <li>sudo systemctl stop nginx.service</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>查看nginx配置文件</li>
+    <li>dnf 安装的 nginx 默认配置文件在 /etc/nginx/nginx.conf</li>
+    <li>cat /etc/nginx/nginx.conf 或</li>
+    <li>vi -R /etc/nginx/nginx.conf -R参数表示只读打开</li>
+    <li>之后就可以根据配置文件找到静态资源目录去更新你的项目了</li>
+  </ul>
+</blockquote>
+
+<h3 id="nodejs安装">nodeJS安装</h3>
+<blockquote>
+  <ul>
+    <li>如果dnf 或者 yum安装直接执行install就可以了</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>下面介绍非yum安装
+首先 安装wget工具</li>
+    <li>sudo dnf install wget</li>
+    <li>去到 <a href="https://nodejs.org/zh-cn/">nodeJs</a> 官网根据系统类型找到下载地址,右键复制出来</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>wget 你复制出来的地址</li>
+    <li>解压 tar zxf node.tar.gx</li>
+    <li>你会得到一个文件夹 现在执行node -v 你会发现报错,是因为linux 还不认识node命令 ,我们需要创建一个软链接
+cd /你的用户主文件夹 mkdir bin</li>
+    <li>cd bin</li>
+    <li>ln -s ~/node/bin/* .</li>
+    <li>node -v 11.12.5 成功!</li>
+  </ul>
+</blockquote>
+:ET
